@@ -3,9 +3,9 @@
 
 # Programs Highlights
 ### 程序的一些亮点：
-* 图片下载进度条显示
+* 支持图片下载进度条显示
 * 异步加载页面的图片下载
-* 多进程下载图片
+* 支持多进程/线程下载图片
 
 # Copyright&copy;
 > **该程序仅用于个人学习、研究或欣赏，对Pixiv作者如有侵权，请及时通知我，我将自行删除。使用该程序下载P站图片的朋友请尊重Pixiv作品原作者，不要将作品用于商业或其他非法用途！谢谢合作！**
@@ -27,7 +27,7 @@
 # How to used
 1. Tools: Python3.x
 2. `git clone https://github.com/darkchii/CrawlPixivImage`
-3. Console key in:
+3. Type the command line on the console:
 ```
 cd CrawlPixivImage
 python example.py
