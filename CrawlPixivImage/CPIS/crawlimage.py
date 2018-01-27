@@ -20,13 +20,13 @@ class CrawlerPixivImg(object):
     def GetMediumImgUrl(self, urlList):# https://i.pximg.net/c/600x600/img-master/img/2018/01/17/13/33/41/66832795_p0_master1200.jpg
         MediumImgUrlList = []
         for url in urlList:
-            MediumImgUrlList.append(url.replace('/240x480/', '/600x600/'))
+            MediumImgUrlList.append(url.replace('240x480', '600x600'))
         return MediumImgUrlList
 
     def GetLargestImgUrl(self, urlList):# https://i.pximg.net/img-original/img/2018/01/17/13/33/41/66832795_p0.jpg
         LargestImgUrlList = []
         for url in urlList:
-            LargestImgUrl = url.replace('/c/240x480/img-master/','/img-original/')
+            LargestImgUrl = url.replace('c/240x480/img-master','img-original')
             LargestImgUrlList.append(LargestImgUrl.replace('_master1200',''))
         return LargestImgUrlList
 
@@ -40,7 +40,7 @@ class CrawlerPixivImg(object):
         status = requests.get(url, headers=headers, stream=True).status_code
         chunk_size = 1024
         
-        # 通过网页响应返回的状态码来判断是否访问正确 2xx为正确 4xx为客户端错误 3xx为重定向 5xx为服务器错误
+        # 通过网页响应返回的状态码来判断是否请求成功 2xx为成功 4xx为客户端错误 3xx为重定向 5xx为服务器错误
         # 404则是访问的页面不存在
         # 403则是被禁止 该程序下说明防盗链不对或爬虫脚本有问题
         # 如果访问正确 则当前图片是jpg 或 png格式的数据 保存为jpg 或 png
