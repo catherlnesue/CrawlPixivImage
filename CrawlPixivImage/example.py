@@ -3,7 +3,7 @@
 @Create date   : 2018-01-21
 @Theme         : WebCrawler - CrawlPixivImage
 '''
-from CPIS.crawlimage import crawlimage
+from CPIS.crawlimage import CrawlerPixivImg
 from multiprocessing import Pool
 import time
 import sys
