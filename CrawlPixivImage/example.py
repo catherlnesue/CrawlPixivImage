@@ -26,19 +26,22 @@ def example():
 
     IMGLibrary = {}
     init_url = 'https://www.pixiv.net/ranking.php?mode=daily'
+    
     for date in range(20170125,20170128):   # 排行榜日期
         for p in range(1,6):   # 异步加载的页面大概有几十页 每一页共50个小图片链接 这里随意测试 而且排行榜中会有前几天甚至前几百天的图片 所以会有许多重复的图片 因此实际上没必要把一张排行榜的全部爬完
             # 异步加载 url格式：https://www.pixiv.net/ranking.php?mode=daily&date=日期&p=页码&format=json&tt=6a124b46e04507dcee2efed9bac25cf5
             params = {
-                'date':'{}'.format(str(date)),
-                'p':'{}'.format(str(p)),
+                'date':str(date),
+                'p':str(p),
                 'format':'json',
                 'tt':'6a124b46e04507dcee2efed9bac25cf5'
             }
+            
             headers = {
                 'Referer': 'https://www.pixiv.net/ranking.php?mode=daily&date={}'.format(str(date)),
                 'User-Agent': 'Mozilla/5.0(Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
             }
+            
             Page = CrawlerPixivImg(init_url, params=params, headers=headers)    # 初始化
             SmallImgUrlList = Page.GetSmallImgUrl()
             PixivImgUrlList = Page.GetLargestImgUrl(SmallImgUrlList)
