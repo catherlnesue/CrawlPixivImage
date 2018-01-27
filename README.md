@@ -1,7 +1,7 @@
 # Theme
 **Python爬取P站图片**
 
-# Program Highlights
+# Programs Highlights
 ### 程序的一些亮点：
 * 图片下载进度条显示
 * 异步加载页面的图片下载
