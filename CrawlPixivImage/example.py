@@ -4,7 +4,7 @@
 @Theme         : WebCrawler - CrawlPixivImage
 '''
 from CPIS.crawlimage import CrawlerPixivImg
-from multiprocessing import Pool
+from multiprocessing import Pool,cpu_count
 import time
 import sys
 
@@ -46,7 +46,7 @@ def example():
             SmallImgUrlList = Page.GetSmallImgUrl()
             PixivImgUrlList = Page.GetLargestImgUrl(SmallImgUrlList)
 
-            Process = Pool(6)   # 开启6个进程并行下载 一般默开启电脑CPU核心个数 这里用多进程下载比多线程快很多
+            Process = Pool(cpu_count())   # 开启进程并行下载 一般默开启电脑CPU核心个数 这里用多进程下载比多线程快很多
             for url in PixivImgUrlList:
                 Process.apply_async(Page.DownloadProcess, args=(url, IMGLibrary))
             Process.close()
