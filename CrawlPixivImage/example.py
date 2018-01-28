@@ -6,17 +6,12 @@
 from CPIS.crawlimage import CrawlerPixivImg
 from multiprocessing import Pool,cpu_count
 import time
-import sys
+import os
 
 def example():
-    try:
-        with open('Pixiv_Img', 'r'):
-            pass
-    except FileNotFoundError:
-        print('请在该程序目录下创建一个\'Pixiv_Img\'文件夹后再运行!')
-        sys.exit(1)
-    except PermissionError:
-        pass
+    if not os.path.exists('Pixiv_Img')：
+        print('请在该程序目录下创建一个\'Pixiv_Img\'文件夹后再运行该程序!')
+        os._exit(1)
     try:
         with open('Pixiv_Img/url.txt', 'a'):
             pass
@@ -58,4 +53,4 @@ if __name__ == '__main__':
     start = time.time()
     example()
     end = time.time()
-    print('下载用时：',float(end - start))
+    print('Download for time used:{} minute' .format(float(end - start)/60))
