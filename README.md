@@ -7,8 +7,8 @@
 * 异步加载页面的图片下载
 * 支持多进程/线程下载图片
 
-# Disclaimer;
-> **该程序仅用于个人学习、研究或欣赏。经由该程序下载Pixiv图片的版权归原作者所有。使用该程序的朋友请尊重Pixiv作品原作者，不要将作品用于商业或其他非法用途，所产生的任何结果皆不代表本人立场，本人不对其真实合法性以及版权负责，亦不承担任何法律责任。**
+# Disclaimer（免责声明）
+> **&nbsp;&nbsp;&nbsp;&nbsp; 该程序仅用于个人学习、研究或欣赏。经由该程序下载Pixiv图片的版权归原作者所有。使用该程序的朋友请尊重Pixiv作品原作者，不要将作品用于商业或其他非法用途，所产生的任何结果皆不代表本人立场，本人不对其真实合法性以及版权负责，亦不承担任何法律责任。**
 
 # Instructions for use
 * &nbsp;&nbsp;&nbsp;&nbsp; 我将CrawlerPixivImg封装了起来，提供了获取小/中/大图片的链接和下载接口，但需要注意的是只能通过小图片的链接来获取其他尺寸大小的图片接口当通过编写主函数程序来链接接口时，就需要初始化CrawlerPixivImg类，类的初始化的原型是：`__init__(self, url, params, headers)`初始化后就可以 通过类变量访问类中的三个方法`GetSmallImgUrl(self)`、`GetMediumImgUrl(self, urlList)`、`GetLargestImgUrl(self,urlList)`来获得图片的 链接，最后再调用类中的方法`DownloadProcess(self, url, IMGLibrary = {})`进行下载。  
