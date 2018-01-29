@@ -9,7 +9,7 @@ class CrawlerPixivImg(object):
         self.params = params
         self.headers = headers
 
-    def get_small_img_url(self):   # 解决异步加载机制
+    def get_small_img_url(self):
         r = requests.get(self.url, params=self.params, headers=self.headers, timeout=1)
         # print(r.url)
         json_file = r.json()['contents']    # 处理json文件
