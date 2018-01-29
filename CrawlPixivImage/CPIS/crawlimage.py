@@ -30,7 +30,7 @@ class CrawlerPixivImg(object):
             largest_img_url_list.append(largest_img_url.replace('_master1200',''))
         return largest_img_url_list
 
-    def download_process(self, url, img_name_library = {}):
+    def download_pixiv_img(self, url, img_name_library = {}):
         img_name = url.split('/')[-1]  # [-1]的意思是从网址中最后一个'/'的后一位开始匹配 获取文件名
         img_id = img_name[:8]
 
