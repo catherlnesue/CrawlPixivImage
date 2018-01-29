@@ -35,7 +35,7 @@ def example():
                 'tt':'6a124b46e04507dcee2efed9bac25cf5'
             }
             
-            if str(date) == time.strftime("%Y%m%d", time.localtime()):
+            if str(date) == time.strftime('%Y%m%d', time.localtime()):
                 params.pop('date')
 
             headers = {
