@@ -3,7 +3,8 @@
     
   可使用如下方式进行调用：
     [example2.py](example.py)
-    ```python
+    ~~~ python
+    
     from CPIS.crawlpixiv import CrawlerPixivImg,CrawlProcess
     
     def main():
@@ -16,4 +17,4 @@
       main()
       end = time.time()
       print('下载用时：{} min'.format((end - start)/60))
-    ```
+    ~~~
