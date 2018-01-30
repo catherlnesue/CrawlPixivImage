@@ -2,7 +2,7 @@
 **该文件中增加了多进程模块，使得程序的使用变得更简易。**
     
 可使用如下方式进行调用：
-[example2.py](example.py)
+[example2.py](example2.py)
     
 ```python
 from CPIS.crawlpixiv import CrawlProcess
