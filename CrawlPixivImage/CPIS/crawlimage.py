@@ -133,6 +133,3 @@ class CrawlerPixivImg(object):
 
             dict = {img_name:img_id}
             img_name_library.update(dict)
-
-        else:
-            return
