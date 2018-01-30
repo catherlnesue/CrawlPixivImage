@@ -5,6 +5,18 @@ import re
 class CrawlerPixivImg(object):
     def __init__(self, url, params, headers):
         object.__init__(self)
+        
+        if not os.path.exists('Pixiv_Img'):
+        print('请在该程序目录下创建一个\'Pixiv_Img\'文件夹后再运行该程序!')
+        os._exit(1)
+
+        try:
+            with open('Pixiv_Img/url.txt', 'a'):
+                pass
+        except FileNotFoundError:
+            with open('Pixiv_Img/url.txt', 'w'):
+                pass
+        
         self.url = url
         self.params = params
         self.headers = headers
@@ -91,7 +103,7 @@ class CrawlerPixivImg(object):
                 'User-Agent': 'Mozilla/5.0(Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
             }
 
-            if img_name in img_name_library:  # 如果已经下载图片 则退出函数
+            if img_name in img_name_library:
                 print('The same picture exists!')
                 return
 
