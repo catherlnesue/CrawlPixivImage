@@ -29,7 +29,7 @@ python example.py
 # Run result
 ![screenshot.png](CrawlPixivImage/Pixiv_Img/screenshot.png)
 
-# About Programs
+# About Program
 + &nbsp;&nbsp;&nbsp;&nbsp;写这个程序前花了一个星期补充了一些基础知识，因而参考了不少的资料，实际上我正式学习Python才半个月，所以程序尚且还有很多的不足之处，还希望大家理解与指点!我会通过之后的学习而不断的改进该程序以使其更完美。
 > 程序至少需要了解一点`http协议`、`http动词`、`浏览器渲染过程`、`多进程/多线程`、`同步/异步加载`、`python - requesets package`。
 
